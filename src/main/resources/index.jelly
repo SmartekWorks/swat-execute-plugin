@@ -1,0 +1,6 @@
+<!--
+  This view is used to render the installed plugins page.
+-->
+<div>
+  With this plugin you can integrate SWAT service with Jenkins to implement a CI with acceptance test.
+</div>
