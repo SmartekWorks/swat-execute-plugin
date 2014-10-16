@@ -70,10 +70,10 @@ public class SwatExecuteBuilder extends Builder {
 		ArrayList<String> completedList = new ArrayList<String>();
 
 		try {
-			JSONObject execIds = utils.apiPost(swatUrl + "/api/jenkins/execute?lang=ja", accessKey, secretKey, executeScript);
+			JSONObject execIds = utils.apiPost(swatUrl + "/api/swat/execute?lang=ja", accessKey, secretKey, executeScript);
 
 			while (true) {
-				executionResult = utils.apiPost(swatUrl + "/api/jenkins/result?lang=ja", accessKey, secretKey, execIds.toString());
+				executionResult = utils.apiPost(swatUrl + "/api/swat/result?lang=ja", accessKey, secretKey, execIds.toString());
 				JSONArray executions = executionResult.getJSONArray("executions");
 				for (int i = 0; i < executions.size(); i++) {
 					JSONObject execution = executions.getJSONObject(i);
